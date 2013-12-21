@@ -1,1 +1,6 @@
-This project was developed for an university subject. Everything was made by me except the Data Structures. The Data Structures have been provided by the teachers but incomplete. The main goal was to complete them in order to use them successfully in the project. 
+This project was developed for a university subject. Everything was made by me except the Data Structures. 
+The Data Structures have been provided by the teachers but incomplete. The main goal was to complete them in order to being used successfully in the project. 
+
+Note: This code doesn't have I/O exceptions because it was guaranteed that the user will put always the correct inputs.
+
+Note2: The comments are in portuguese but in working on it. By the end of the weekeng I will have everything in english.

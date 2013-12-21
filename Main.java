@@ -1,3 +1,7 @@
+/**
+ * @author Nuno de Castro
+ */
+
 import java.util.Scanner;
 import dataStructures.Entry;
 import dataStructures.Iterator;

@@ -8,6 +8,7 @@ public interface PrintManager extends Serializable {
 
 	/**
 	 * Add a photo to the system
+	 * The code, Name, width and height of the photo must be provided
 	 * @param code
 	 * @param fileName
 	 * @param width
@@ -16,6 +17,7 @@ public interface PrintManager extends Serializable {
 	void addPhoto(String code, String fileName, int width, int height);
 	/**
 	 * Add an empty album to the system
+	 * The album code must be provided
 	 * @param code
 	 */
 	void addAlbum(String code);
@@ -32,16 +34,25 @@ public interface PrintManager extends Serializable {
 	void addPhotoToAlbum(String code, String albumCode, int width, int height);
 
 	/**
-	 * Adiciona uma impressora ao sistema dado a seu nome "name", localização "location", altura "maxWidth" e lagura "maxHeight" maxima suportada,
-	 *numero maximo de impressoes "maxImpressions" e valor minino aceite antes de ser efectuada uma manutenção "MaintenanceValue".
-	 *Se o valor "MaintenanceValue" for superior ao "maxImpressions" a operação falha.
-	 *Cada impressora poderá conter uma fila de espera, contendo todos os álbuns (em estado final) que ainda não foram impressos. 
+	 *
+	 *Add a printer to the system
+	 *The name, location, max width, max height, max Impressions and Maintenance Value must be provided
+	 *The max width and height will set the printer limits
+	 *The max impressions is the maximum number of prints that the printer can do before maintenance
+	 *The maintenance value is the value controls when the printer needs maintenance
+	 * @param name
+	 * @param location
+	 * @param maxWidth
+	 * @param maxHeight
+	 * @param maxImpressions
+	 * @param MaintenanceValue
 	 */
 	void addPrinter(String name, String location, int maxWidth, int maxHeight, int maxImpressions, int MaintenanceValue);
 
 	/**
-	 *Remove a impressora com o nome "name" do sistema.
-	 *Para a impressora ser removida com successo a impressora tem que existir.
+	 *Remove a printer from the system
+	 *The printer name must be provided
+	 *@param name
 	 */
 	void removePrinter(String name);
 
@@ -70,19 +81,21 @@ public interface PrintManager extends Serializable {
 	boolean doMaintenance();
 
 	/**
-	 * @return Retorna um iterador de impressoras
+	 * @return Returns and iterator of printers
 	 */
 	Iterator<Entry<String, Printer>> listPrinters ();
 	
 	/**
-	 * 
+	 * Returns a printer location
+	 * The printer name must be provided
 	 * @param name
-	 * @return Retorna a localizacao da impressora
+	 * @return Returns a string with the printer location
 	 */
 	String printerLocatition(String name);
 	
 	/**
-	 * Limpa a lista de espera de uma impressora
+	 * Cleans the printer waiting list
+	 * The name of the printer must be provided
 	 * @param name
 	 */
 	void cleanWaitList(String name);
